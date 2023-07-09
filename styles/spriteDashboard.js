@@ -47,30 +47,63 @@ const styles = StyleSheet.create({
         paddingVertical:10
     },
     spriteCard:{
+        display:"flex",
+        flexDirection:"column",
         height:"100%",
         width:150,
         backgroundColor:"#fff",
         marginHorizontal:20,
     },
-    badgeContainer:{
+    badge:{
         position:"absolute",
+        display:"flex",
+        justifyContent:"center",
+        alignItems:"center",
         top:0,
         left:130,
-        zIndex:2,
-    },
-    badge:{
         height:40,
         width:40,
         borderRadius:20,
+        backgroundColor:"green",
     },
     spriteView:{
-        height:"78%"
+        display:"flex",
+        justifyContent:"center",
+        alignItems:"center",
+        height:"75%"
+    },
+    addBtn:{
+        backgroundColor:"#855CD6",
+        width:"100%",
+        height:"20%",
+        color:"#fff",
+        display:"flex",
+        fontWeight:"600",
+        flexDirection:"row",
+        justifyContent:"center",
+        alignItems:"center",
+        textAlign:"center",
+        textAlignVertical:"center",
     },
     addSpriteCard:{
         height:"100%",
         width:150,
         backgroundColor:"#fff",
         marginHorizontal:20,
+    },
+    modal:{
+        width:"100%",
+        height:"100%",
+        display:"flex",
+        justifyContent:"center",
+        alignItems:"center"
+    },
+    modalRow:{
+        display:"flex",
+        flexDirection:"row",
+        width:"100%",
+        justifyContent:"space-evenly",
+        alignItems:"center"
     }
 })
 

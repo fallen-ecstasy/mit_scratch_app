@@ -1,18 +1,34 @@
 {
   "dependencies": {
+    "@eva-design/eva": "^2.2.0",
     "@expo/vector-icons": "^13.0.0",
+    "@expo/webpack-config": "^18.0.1",
+    "@react-navigation/native": "^6.1.7",
+    "@react-navigation/native-stack": "^6.9.13",
     "@rescript/react": "^0.11.0",
+    "@ui-kitten/components": "^5.3.1",
     "expo": "^48.0.7",
+    "expo-constants": "~14.2.1",
     "expo-font": "~11.1.1",
+    "expo-linking": "~4.0.1",
+    "expo-router": "^1.0.0",
     "expo-splash-screen": "~0.18.1",
+    "expo-status-bar": "~1.4.4",
     "react": "18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
     "react-dom": "18.2.0",
     "react-native": "0.71.8",
+    "react-native-drax": "^0.10.3",
     "react-native-elements": "^3.4.2",
     "react-native-safe-area-context": "4.5.0",
+    "react-native-screens": "~3.20.0",
+    "react-native-svg": "13.4.0",
+    "react-native-uuid": "^2.0.1",
     "react-native-web": "~0.18.7",
+    "react-redux": "^8.1.1",
+    "redux": "^4.2.1",
     "rescript-react-native": "^0.71.1",
-    "@expo/webpack-config": "^18.0.1"
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -26,5 +42,6 @@
   },
   "version": "1.0.0",
   "private": true,
-  "name": "mit_scratch_app"
+  "name": "mit_scratch_app",
+  "main": "expo-router/entry"
 }

@@ -1,0 +1,6 @@
+export const ADD_ACTION = 'ADD_ACTION'
+export const UPDATE_ACTION = 'UPDATE_ACTION'
+
+export const ADD_SPRITE = 'ADD_SPRITE'
+export const UPDATE_SPRITEACTION = 'UPDATE_SPRITEACTION'
+export const DELETE_SPRITE = 'DELETE_SPRITE'

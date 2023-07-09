@@ -1,23 +1,26 @@
 import React, { useRef } from "react";
 import { StyleSheet, View } from "react-native";
-import MenuBar from "./components/MenuBar/MenuBar";
-import Playground from "./components/Playground/playground";
-import SpriteDashboard from "./components/SpriteDashboard/sprite_dashboard";
+import Playground from "../components/Playground/playground";
+import SpriteDashboard from "../components/SpriteDashboard/sprite_dashboard";
+
+
+import { Provider } from 'react-redux';
+import configureStore from '../redux/configureStore';
 
 // TODO : Create and Add Splash Screen to the Project
+const store = configureStore();
 
-export default function App() {
+export default function Home() {
 
   const playgroundRef = useRef();
 
-
-
   return (
+    <Provider store={store}>
     <View style={styles.container}>
-      <MenuBar />
       <Playground ref={playgroundRef} />
+      {/* <Button title="Button" onPress={()=>playgroundRef.current.decSize()} /> */}
       {/* <View style={styles.tab}>
-        <Button title="MOVE LEFT 50" onPress={() => playgroundRef.current.moveLeft50()}/>
+        <Button title="MOVE LEFT 50" onPress={() => playgrondRef.current.moveLeft50()}/>
         <Button title="MOVE RIGHT 50" onPress={() => playgroundRef.current.moveRight50()}/>
       </View>
       <View style={styles.tab}>
@@ -30,6 +33,7 @@ export default function App() {
       </View> */}
       <SpriteDashboard />
     </View>
+    </Provider>
   );
 }
 
@@ -38,7 +42,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    marginTop:35,
+    marginTop:10
   },
   tab: {
     width:"90%",
