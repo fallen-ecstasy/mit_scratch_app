@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     spriteDashboard:{
         width:"95%",
-        height:"40%",
+        height:"50%",
     },
     container1:{
         display:"flex",
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
         display:"flex",
         justifyContent:"center",
         alignItems:"center",
-        height:"75%"
+        height:"80%"
     },
     addBtn:{
         backgroundColor:"#855CD6",
@@ -104,6 +104,13 @@ const styles = StyleSheet.create({
         width:"100%",
         justifyContent:"space-evenly",
         alignItems:"center"
+    },
+    btnDash:{
+        display:"flex",
+        flexDirection:"row",
+        justifyContent:"space-evenly",
+        alignItems:"center",
+        marginTop:10
     }
 })
 

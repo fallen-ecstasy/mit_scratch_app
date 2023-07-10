@@ -1,5 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Animated, PanResponder, useWindowDimensions } from 'react-native';
+import { useSelector } from 'react-redux';
 
 const SpriteObject = ({items}) => {
     const pan = useRef(new Animated.ValueXY()).current;
@@ -7,6 +8,16 @@ const SpriteObject = ({items}) => {
     const scale = useRef(new Animated.Value(1)).current;
 
     console.log(items);
+
+    const {play} = useSelector(state => state.mainAction);
+
+    useEffect(()=>{
+      if(play===1) sampleAnimation();
+      else {
+        sampleAnimationReset();
+        moveOO().start();
+      }
+    },[play])
 
     const [SpriteData, setSpriteData] = useState({
         type:-1,
@@ -110,6 +121,70 @@ const SpriteObject = ({items}) => {
       useNativeDriver:false,
     }
   )
+
+  const sampleAnimation = () =>{
+    setTimeout(()=>{
+      rotateClock().start(() => rot.setValue(1));
+      rot.flattenOffset();
+    },0);
+
+    setTimeout(()=>{
+      moveRight(50).start();
+      pan.flattenOffset();
+    },1000);
+    
+    setTimeout(()=>{
+      moveDown(50).start();
+      pan.flattenOffset();
+    },2000);
+    
+    setTimeout(()=>{
+      moveRight(50).start();
+    pan.flattenOffset();
+    },3000);
+    
+    setTimeout(()=>{
+      moveDown(50).start();
+      pan.flattenOffset();
+    },4000);
+    setTimeout(()=>{
+      moveOO().start();
+      pan.flattenOffset();
+    },5000);
+    
+    setTimeout(()=>{
+      rotateClock().start(()=>rot.setValue(1));
+      rot.flattenOffset();
+    },6000);
+    setTimeout(()=>{
+      rotateAnti().start(()=>rot.setValue(1));
+      rot.flattenOffset();
+    },7000);
+  }
+
+  const sampleAnimationReset = () =>{
+      moveRight(50).reset();
+      pan.flattenOffset();
+    
+      moveDown(50).reset();
+      pan.flattenOffset();
+    
+      moveRight(50).reset();
+      pan.flattenOffset();
+    
+      moveDown(50).reset();
+      pan.flattenOffset();
+
+      moveOO().reset();
+      pan.flattenOffset();
+    
+      rotateClock().reset();
+      rot.flattenOffset();
+
+      rotateAnti().reset();
+      rot.flattenOffset();
+
+  }
 
   const [Seq, setSeq] = useState([]);
 

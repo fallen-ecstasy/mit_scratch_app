@@ -3,16 +3,20 @@
 import { Link } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import { Alert, FlatList, Image, Modal, Pressable, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import { Icon } from 'react-native-elements';
+import { Button, Icon } from 'react-native-elements';
 import { useDispatch, useSelector } from 'react-redux';
+import { playAction, resetAction } from '../../redux/actions/mainAction';
 import { addSprite, deleteSprite } from '../../redux/actions/sprites';
 import styles from '../../styles/spriteDashboard';
 
 const SpriteDashboard = () => {
 
   const Sprites = useSelector(state => state.sprites);
+  const mainAction = useSelector(state => state.mainAction);
   const dispatch = useDispatch();
+  const [ActiveSprite, setActiveSprite] = useState("");
   useEffect(()=>{
+    if(Sprites.sprite.length > 0) setActiveSprite(Sprites.sprite.spriteID);
   },[dispatch,Sprites])
 
   const imageProvider = (type) =>{
@@ -32,7 +36,7 @@ const SpriteDashboard = () => {
     }
   }
 
-
+  
   const [AddModal, setAddModal] = useState(false);
   const Card = ({type,id,onPressDel}) => {
         return(
@@ -45,17 +49,39 @@ const SpriteDashboard = () => {
         //   </View>
         //   <Link key={id} style={styles.addBtn} href={`/${id}`}><Text>Add Actions</Text></Link>
         //   </View>
-        <View style={styles.spriteCard}>
+        <View style={[styles.spriteCard,
+        {
+          borderColor:"#855CD6",
+          borderWidth:((id===ActiveSprite)?3:0),
+          borderStyle:"solid"
+          }]}>
+          <Pressable onPress={()=>setActiveSprite(id)}>
           <TouchableOpacity onPress={onPressDel} style={styles.badge}>
-            <Icon name={"delete"} type={"material"} />
+            <Icon name={"delete"} type={"material"} color="#fff"/>
           </TouchableOpacity>
           <View style={styles.spriteView}>
             {imageProvider(type)}
           </View>
           <Link key={id} style={styles.addBtn} href={`/${id}`}><Text>Add Actions</Text></Link>
+          </Pressable>
         </View>
         );
   };
+
+  const getActiveSpriteX = () => {
+    const ActiveSprite = Sprites.sprite.find(item => item.spriteID === ActiveSprite);
+    if(ActiveSprite) return ActiveSprite.spritePos.x;
+  }
+
+  const getActiveSpriteY = () => {
+    const ActiveSprite = Sprites.sprite.find(item => item.spriteID === ActiveSprite);
+    if(ActiveSprite) return ActiveSprite.spritePos.y;
+  }
+
+  const getActiveSpriteType = () => {
+    const ActiveSprite = Sprites.sprite.find(item => item.spriteID === ActiveSprite);
+    if(ActiveSprite) return ActiveSprite.spriteType;
+  }
 
 
   return (
@@ -125,21 +151,26 @@ const SpriteDashboard = () => {
                 </View>
               </View>
             </Modal>
-
+            <View style={styles.btnDash}>
+            <Button title={"Sample Play"} onPress={()=>dispatch(playAction())} icon={<Icon name="forward" type="material" />} />
+        <Button title={"Play"} icon={<Icon name="forward" type="material" />} />
+        <Button title={"Reset"} onPress={()=>dispatch(resetAction())} icon={<Icon name="replay" type="material" />} />
+      </View>
       <View style={styles.container1}>
         <View style={styles.element}>
             <Text>Sprite :</Text>
-            <TextInput style={styles.inputBox} editable={false} defaultValue='Cat'/>
+            <TextInput style={styles.inputBox} value={getActiveSpriteType()} editable={false} defaultValue='Cat'/>
         </View>
         <View style={styles.element}>
             <Text>X :</Text>
-            <TextInput style={styles.inputBox} editable defaultValue={"0.0"}/>
+            <TextInput style={styles.inputBox} value={getActiveSpriteX()} editable={false} defaultValue={"0.0"}/>
         </View>
         <View style={styles.element}>
             <Text>Y :</Text>
-            <TextInput style={styles.inputBox} editable defaultValue={"0.0"} />
+            <TextInput style={styles.inputBox} value={getActiveSpriteY()} editable={false} defaultValue={"0.0"} />
         </View>
       </View>
+      
       <ScrollView horizontal style={styles.container2}>
         {/* {Sprites.map((sprite)=>(
           <View id={`${sprite.id}`} style={styles.spriteCard}>

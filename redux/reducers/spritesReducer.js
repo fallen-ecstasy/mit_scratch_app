@@ -1,5 +1,5 @@
 import uuid from 'react-native-uuid';
-import { ADD_SPRITE, DELETE_SPRITE, UPDATE_SPRITEACTION } from "../actions/types";
+import { ADD_SPRITE, DELETE_SPRITE, UPDATE_SPRITEACTION, UPDATE_SPRITE_POS } from "../actions/types";
 
 // SPRITE:
 //  - spriteID
@@ -11,6 +11,7 @@ const initialState = {sprite:[
         spriteID : uuid.v4(),
         spriteType : "pico",
         spriteAction : null,
+        spritePos: {x:"0",y:"0"},
     }
 ]}
 
@@ -23,6 +24,7 @@ const spritesReducer = (state = initialState, action) => {
                 spriteID : uuid.v4(),
                 spriteType : action.payload,
                 spriteAction : null,
+                spritePos: {x:0,y:0},
             }
             temp.push(newSprite);
             return {
@@ -44,6 +46,15 @@ const spritesReducer = (state = initialState, action) => {
             const ind = state.sprite.indexOf(action.payload);
             temp = [...state.sprite];
             if(ind > -1) temp.splice(ind,1);
+            return{
+                ...state,
+                sprite: temp,
+            }
+        case UPDATE_SPRITE_POS:
+            const i = state.sprite.indexOf(action.payload.sprite);
+            temp = [...state.sprite];
+            if(i > -1) temp[i] = {...temp[i],
+            spritePos : action.payload.pos}
             return{
                 ...state,
                 sprite: temp,

@@ -1,11 +1,4 @@
-import { ADD_ACTION, UPDATE_ACTION } from "./types"
-
-
-export const addAction = () =>{
-    return {
-        type : ADD_ACTION,
-    }
-}
+import { UPDATE_ACTION } from "./types"
 
 export const updateAction = (actionId,animationSequence) => {
     return {
