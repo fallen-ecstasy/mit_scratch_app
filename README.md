@@ -38,15 +38,11 @@ Start the server
 
 ## Demo
 
-![]("https://github.com/fallen-ecstasy/mit_scratch_app/blob/main/assets/screenshots/gif1.gif")
+![](https://github.com/fallen-ecstasy/mit_scratch_app/blob/main/assets/screenshots/gif1.gif)
 
-![]("https://github.com/fallen-ecstasy/mit_scratch_app/blob/main/assets/screenshots/gif2.gif")
+![](https://github.com/fallen-ecstasy/mit_scratch_app/blob/main/assets/screenshots/gif2.gif)
 
-![]("https://github.com/fallen-ecstasy/mit_scratch_app/blob/main/assets/screenshots/gif3.gif")
-
-![]("https://github.com/fallen-ecstasy/mit_scratch_app/blob/main/assets/screenshots/ss1.jpg")
-
-![]("https://github.com/fallen-ecstasy/mit_scratch_app/blob/main/assets/screenshots/ss2.jpg")
+![](https://github.com/fallen-ecstasy/mit_scratch_app/blob/main/assets/screenshots/gif3.gif)
 
 ## Authors
 
