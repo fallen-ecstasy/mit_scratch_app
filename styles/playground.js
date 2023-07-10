@@ -8,6 +8,7 @@ const style = StyleSheet.create({
         height:"50%",
         overflow:"hidden",
         display:"flex",
+        flexDirection:"row",
         justifyContent:"center",
         alignItems:"center",
     },
