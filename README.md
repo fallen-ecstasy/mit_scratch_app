@@ -1,29 +1,54 @@
-# `react-native-elements` Example
 
-<p>
-  <!-- iOS -->
-  <a href="https://itunes.apple.com/app/apple-store/id982107779">
-    <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
-  </a>
-  <!-- Android -->
-  <a href="https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample">
-    <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
-  </a>
-  <!-- Web -->
-  <a href="https://docs.expo.dev/workflow/web/">
-    <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
-  </a>
-</p>
+# MIT Scratch Editor Clone
 
-Example demonstrating use of the [`react-native-elements`][rne] library in Expo.
+Made with React Native
 
-## 🚀 How to use
+## 🚀 How To Use
 
-- Run `yarn` or `npm install`
-- Run `yarn start` or `npm run start` to try it out.
+Clone the project
 
-## 📝 Notes
+```bash
+  git clone https://github.com/fallen-ecstasy/mit_scratch_app
+```
 
-- [React Native Elements docs][rne]
+Go to the project directory
 
-[rne]: https://reactnativeelements.com/
+```bash
+  cd mit_scratch_app
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm start
+```
+
+- Once the server starts, a browser window will open with the Expo DevTools.
+
+- Install the Expo Go app on your iOS or Android device.
+
+- Use your device's camera to scan the QR code displayed in the browser or terminal. This will open the app on your device.
+
+
+## Demo
+
+![]("https://github.com/fallen-ecstasy/mit_scratch_app/blob/main/assets/screenshots/gif1.gif")
+
+![]("https://github.com/fallen-ecstasy/mit_scratch_app/blob/main/assets/screenshots/gif2.gif")
+
+![]("https://github.com/fallen-ecstasy/mit_scratch_app/blob/main/assets/screenshots/gif3.gif")
+
+![]("https://github.com/fallen-ecstasy/mit_scratch_app/blob/main/assets/screenshots/ss1.jpg")
+
+![]("https://github.com/fallen-ecstasy/mit_scratch_app/blob/main/assets/screenshots/ss2.jpg")
+
+## Authors
+
+- [Harsh Misra (@fallen-ecstasy)](https://www.github.com/fallen-ecstasy)
+
