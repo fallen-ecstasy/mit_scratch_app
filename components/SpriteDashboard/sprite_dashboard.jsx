@@ -40,15 +40,6 @@ const SpriteDashboard = () => {
   const [AddModal, setAddModal] = useState(false);
   const Card = ({type,id,onPressDel}) => {
         return(
-        // <View style={styles.spriteCard}>
-        //   <TouchableOpacity onPress={onPressDel} style={styles.badge}>
-        //     <Icon name={"delete"} type={"material"} />
-        //   </TouchableOpacity>
-        //   <View style={styles.spriteView}>
-        //       {imageProvider(type)}
-        //   </View>
-        //   <Link key={id} style={styles.addBtn} href={`/${id}`}><Text>Add Actions</Text></Link>
-        //   </View>
         <View style={[styles.spriteCard,
         {
           borderColor:"#855CD6",

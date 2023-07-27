@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "e9716ad2-09b5-4aeb-943e-ef1488c9b472"
+      }
+    },
+    "owner": "ecstasy1337",
+    "slug": "mit-scratch-app",
+    "android": {
+      "package": "com.ecstasy1337.mitscratchapp"
+    },
+    "ios": {
+      "bundleIdentifier": "com.ecstasy1337.mitscratchapp"
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/e9716ad2-09b5-4aeb-943e-ef1488c9b472"
+    }
+  }
+}
